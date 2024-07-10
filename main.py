@@ -1,6 +1,7 @@
 import numpy as np  # Import the NumPy library for numerical operations
 from gaussian_elimination import gaussian_elimination  # Import the gaussian_elimination function from the defined module
 from LU import solve_linear_system_lu
+from jacobi import jacobi_method
 
 def input_augMatrix():
     # Prompt the user to input the size of the square matrix A
@@ -44,12 +45,21 @@ C, d = input_augMatrix()
 
 # LU Decomposition (Uncomment the code below to implement LU Decomposition Method)
 
-
 # Call the LU Decomposition function to solve the system
-solution = solve_linear_system_lu(C, d)
+#solution = solve_linear_system_lu(C, d)
 
-if solution is not None:  # Check if a solution was found
-    print("x, L, U (respectively):", solution)  # Print the solution
-else:
-    print("No solution found or matrix is singular.")  # Print a message indicating no solution was found
-    
+#if solution is not None:  # Check if a solution was found
+#    print("x, L, U (respectively):", solution)  # Print the solution
+#else:
+#    print("No solution found or matrix is singular.")  # Print a message indicating no solution was found
+
+
+
+# Jacobi Method (Uncomment the code below to implement Jacobi Method)
+
+x0 = np.zeros_like(d)
+try:
+    x = jacobi_method(C, d, x0)
+    print("Solution x:", x)
+except Exception as e:
+    print(f"Error solving the linear system with Jacobi method: {e}")
