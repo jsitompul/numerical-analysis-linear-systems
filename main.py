@@ -4,11 +4,11 @@ from LU import solve_linear_system_lu
 from jacobi import jacobi_method
 from gauss_seidel import gauss_seidel_method
 
-def input_augMatrix():
-    # Prompt the user to input the size of the square matrix A
-    n = int(input("Enter the size of square matrix A: "))
+def input_linearEquations():
+    # Prompt the user to input the size of the system of linear equations
+    n = int(input("Enter the size of the linear equations system: "))
     
-    matrix = []  # Initialize an empty list to store the rows of the matrix A
+    square_matrix = []  # Initialize an empty list to store the rows of the matrix A
     col_vector = []  # Initialize an empty list to store the entries of vector b
     
     # Loop to input the entries of the matrix A
@@ -17,7 +17,7 @@ def input_augMatrix():
         for j in range(n):
             row_entry = float(input(f"Enter A[{i},{j}]: "))  # Prompt the user to input each element of the matrix A
             rows.append(row_entry)  # Append the element to the current row
-        matrix.append(rows)  # Append the current row to the matrix
+        square_matrix.append(rows)  # Append the current row to the matrix
 
     # Loop to input the entries of the vector b
     for k in range(n):
@@ -25,10 +25,10 @@ def input_augMatrix():
         col_vector.append(colvec_entry)  # Append the element to the vector
     
     # Convert the lists to NumPy arrays and return them
-    return np.array(matrix), np.array(col_vector)
+    return np.array(square_matrix), np.array(col_vector)
 
-# Call the function to input the augmented matrix and vector
-C, d = input_augMatrix()
+# Call the function to input the system of linear equations (square matrix C and vector d)
+C, d = input_linearEquations()
 
 
 # Gaussian Elimination (Uncomment the code below to implement Gaussian Elimination Method)
