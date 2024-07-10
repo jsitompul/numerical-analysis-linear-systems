@@ -1,5 +1,6 @@
 import numpy as np  # Import the NumPy library for numerical operations
 from gaussian_elimination import gaussian_elimination  # Import the gaussian_elimination function from the defined module
+from LU import solve_linear_system_lu
 
 def input_augMatrix():
     # Prompt the user to input the size of the square matrix A
@@ -27,10 +28,28 @@ def input_augMatrix():
 # Call the function to input the augmented matrix and vector
 C, d = input_augMatrix()
 
+
+# Gaussian Elimination (Uncomment the code below to implement Gaussian Elimination Method)
+
+
 # Call the Gaussian elimination function to solve the system
-solution = gaussian_elimination(C, d)
+#solution = gaussian_elimination(C, d)
+
+#if solution is not None:  # Check if a solution was found
+#   print("Solution x:", solution)  # Print the solution
+#else:
+#    print("No solution found or matrix is singular.")  # Print a message indicating no solution was found
+
+
+
+# LU Decomposition (Uncomment the code below to implement LU Decomposition Method)
+
+
+# Call the LU Decomposition function to solve the system
+solution = solve_linear_system_lu(C, d)
 
 if solution is not None:  # Check if a solution was found
-    print("Solution x:", solution)  # Print the solution
+    print("x, L, U (respectively):", solution)  # Print the solution
 else:
     print("No solution found or matrix is singular.")  # Print a message indicating no solution was found
+    
