@@ -2,6 +2,11 @@
 
 This project demonstrates the implementation of four numerical methods to solve linear systems:` Gaussian Elimination`, `LU Decomposition`, `Jacobi Method`, and `Gauss-Seidel` Method. The code is structured with separate modules for each method, and a main script (`main.py`) to call and test these methods.
 
+
+## Author
+
+Jimmy Sitompul
+
 ## Project Structure
 
 - `main.py`: The main script that interacts with the user, takes input for the linear equations system (square matrix 𝐴 and vector 𝑏), and calls the respective methods.
